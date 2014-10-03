@@ -111,7 +111,7 @@ class Game
     end
     puts "Would you like to hit? (y/n)"
     one_more = gets.chomp
-    until ((player.total > 21) || (one_more.eql? "n")) do #why do I need these parentheses???????
+    until player.total > 21 || one_more == "n" do
       player.hit
       player.show
       if player.total > 21
